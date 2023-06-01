@@ -1,0 +1,43 @@
+<div class="container" style="background-color: #dfdddd73;">
+    <br>
+    <!-- *ngIf="isAdmin" -->
+    <button class="btn btn-info m-2" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modal-nuevoInmueble">Agregar nuevo <i class="bi bi-person-add"></i></button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">NOMBRE</th>
+          <th scope="col">DIRECCION</th>
+          <th scope="col">PRECIO</th>
+          <th scope="col">ESTADO</th>
+          <th scope="col">TIPO DE INMUEBLE</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inmu of inmuebles ">
+          <th scope="row">{{ inmu.id_inmueble }}</th>
+          <td>{{ inmu.nombre }}</td>
+          <td> {{inmu.direccion }}</td>
+          <td>{{ inmu.precio }}</td>
+          <td>{{ inmu.estado }}</td>
+          <td>{{ inmu.tipo_inmuble }}</td>
+         
+          <td >
+            <div class="d-flex gap-2 ">      
+              <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-confirmacion" (click)="obtenerInmueble(inmu)"><i class="bi bi-trash-fill"></i></a>
+              <a class="btn btn-warning" (click)="obtenerInmuebleId(inmu)"><i class="bi bi-pencil-fill"></i></a>
+            </div>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <app-nuevo-inmueble (inmuebleGuardado)="onInmuebleGuardado($event)"></app-nuevo-inmueble>
+    
+    <app-modal-confirma
+    [idIdmuebleoAEliminar]="inmuebleSeleccionado"
+    (eliminarInmueble)="delete($event)"
+    ></app-modal-confirma>
+     <br>
+  </div>

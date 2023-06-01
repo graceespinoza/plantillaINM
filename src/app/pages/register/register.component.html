@@ -1,0 +1,34 @@
+<div class="table-t">
+  <div class="card mb-3">
+
+    <div class="card-body">
+  <form [formGroup]="form" (ngSubmit)="guardar()" method="POST">
+      <div id="formulario">
+          <h1> Crear Usuario </h1>
+      </div>
+
+      <div id="tabla-formulario">
+          <label for="nombres">Nombres</label>
+          <input placeholder="Ingrese su nombre..." formControlName="firstname"  type="text" id="tabla1">
+      
+          <label for="username">Username</label>
+          <input placeholder="Ingrese su username..." formControlName="username"  type="text" id="tabla3">
+
+          <label for="direccion">Apellidos</label>
+          <input placeholder="Ingrese su username..." formControlName="lastname"  type="text" id="tabla4">
+
+          <label for="email">Email </label>
+          <input placeholder="Escriba email" formControlName="email"  type="text" id="tabla5">
+
+          <label for="password">Contrasena </label>
+          <input placeholder="Escriba contrasena" formControlName="password"  type="password" id="tabla6">
+         
+      </div>
+      <button [disabled]="!form.valid" name="registro" type="submit" class="btn btn-danger btn-sm m-2" id="button"> 
+          <a  >¡Registrarse!</a>
+      </button>
+      
+  </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+
+<div  class="modal fade" id="modal-nuevoInmueble" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Creacion de nuevo INMUEBLE</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <form (ngSubmit)="guardar()" [formGroup]="formin">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="nombre" id="input-nombre" placeholder="Nombre" required>
+                <label for="floatingInput" >Nombre</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="direccion" id="input-direccion" placeholder="direccion" required>
+                <label for="input-direccion" class="form-label">direccion</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="precio" id="input-precio" placeholder="precio" required>
+                <label for="input-precio" class="form-label">precio</label>
+              </div>
+              <div class="mb-3">
+                <label for="input-estado" class="form-label">Estado</label>
+                <select class="form-select" formControlName="estado" id="input-estado">
+                  <option value="A">Activo</option>
+                  <option value="I">Inactivo</option>
+                </select>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="tipo_inmuble" id="input-tipo_inmuble" placeholder="tipo_inmuble" required>
+                <label for="input-tipo_inmuble" class="form-label">Tipo inmueble</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="usuarios" id="input-tipo_inmuble" placeholder="usuario" required>
+                <label for="input-usuario" class="form-label">Usuario</label>
+              </div>
+              <!-- <div class="form-floating mb-3">
+                <select  aria-label="usuario" formControlName="firstname" id="tabla"> Nombre de Inmueble
+                    <option [ngValue]="item" *ngFor="let item of usuario">
+                            {{item.firstname}}
+                    </option>
+                </select>
+            </div> -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

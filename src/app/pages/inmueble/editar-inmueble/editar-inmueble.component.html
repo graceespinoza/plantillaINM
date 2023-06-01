@@ -8,7 +8,7 @@
             <div class="card mb-3">
               <div class="card-body">
                 <legend class="text-center header">Editar usuario</legend>
-                <form (ngSubmit)="guardar()" [formGroup]="form">
+                <form (ngSubmit)="guardar()" [formGroup]="forms">
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" formControlName="nombre" id="input-nombre"
                     placeholder="Nombre" required />

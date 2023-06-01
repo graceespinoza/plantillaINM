@@ -1,0 +1,48 @@
+<div  class="modal fade" id="modal-nuevoReserva" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Creacion de nuevo reserva</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <form (ngSubmit)="guardar()" [formGroup]="form">
+              <div class="form-floating mb-3">
+                <div class="mb-3">
+                    <label for="input-estado" class="form-label">Estado</label>
+                    <select class="form-select" formControlName="estado" id="input-estado">
+                      <option value="A">Activo</option>
+                      <option value="I">Inactivo</option>
+                    </select>
+                  </div>
+                <input type="text" class="form-control" formControlName="tipo" id="input-tipo" placeholder="tipo" required>
+                <label for="floatingInput" >TIPO</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="time" class="form-control" formControlName="hora" id="input-hora" placeholder="hora" required>
+                <label for="input-apellido" class="form-label">Apellido</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="date" class="form-control" formControlName="fecha" id="input-fecha" placeholder="fecha" required>
+                <label for="input-fecha" class="form-label">FECHA</label>
+              </div>
+         
+              <div class="mb-3">
+                <label for="input-roles" class="form-label">Roles</label>
+                <select class="form-select" formControlName="inmuebe" id="input-roles">
+                  <option *ngFor="let inmu of reservas">{{ inmu.inmueble?.nombre }} </option>
+                </select>
+              </div>
+             
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

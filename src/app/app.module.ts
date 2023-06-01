@@ -22,6 +22,8 @@ import { InmuebleComponent } from './pages/inmueble/inmueble.component';
 import { NuevoInmuebleComponent } from './pages/inmueble/nuevo-inmueble/nuevo-inmueble.component';
 import { EditarInmuebleComponent } from './pages/inmueble/editar-inmueble/editar-inmueble.component';
 import { ModalConfirmaComponent } from './pages/inmueble/modal-confirma/modal-confirma.component';
+import { ReservaComponent } from './pages/reserva/reserva.component';
+import { ListReservaComponent } from './pages/reserva/list-reserva/list-reserva.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { ModalConfirmaComponent } from './pages/inmueble/modal-confirma/modal-co
     NuevoInmuebleComponent,
     EditarInmuebleComponent,
     ModalConfirmaComponent,
+    ReservaComponent,
+    ListReservaComponent,
     
   ],
   imports: [

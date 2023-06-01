@@ -13,7 +13,7 @@ import { Usuario } from 'src/app/models/Usuario.model';
 })
 export class EditarInmuebleComponent {
   inmueble!: Inmueble;
-  form!: FormGroup;
+  forms!: FormGroup;
   usuarios: Usuario[] =[];
   @Input() idInmuebleEditar!: Inmueble;
   id_inmueble = localStorage.getItem('idInmueble');
@@ -27,7 +27,7 @@ export class EditarInmuebleComponent {
   readonlyMode: boolean = true;
   ngOnInit() {
     if (this.tokenSer.isAdmin()) {
-      this.form = this.formBuilder.group({
+      this.forms = this.formBuilder.group({
         nombre: ['', Validators.required],
         direccion: ['', Validators.required],
         precio: ['', Validators.required],
@@ -43,7 +43,7 @@ export class EditarInmuebleComponent {
           console.log(`Ocurrió un error al traer el usuario ${error.status}`);
         },
         complete: () => {
-          this.form.patchValue({
+          this.forms.patchValue({
             nombre:this.inmueble.nombre,
             direccion:this.inmueble.direccion,
             precio:this.inmueble.precio,
@@ -58,22 +58,21 @@ export class EditarInmuebleComponent {
 
       }
   }
-  volve(){
+  volver(){
     localStorage.removeItem('idImueble');
     this.router.navigate(['inmueble'])
   }
   guardar() {
-    if (this.form.valid) {
+    if (this.forms.valid) {
       const inmueble: Inmueble = {
        id_inmueble: this.inmueble.id_inmueble,
-       nombre: this.form.value.nombre,
-       direccion: this.form.value.direccion,
-       precio: this.form.value.precio,
-       estado:this.form.value.estado,
-       tipo_inmuble:this.form.value.tipo_inmuble,
-            usuarios:this.form.value.usuarios
+       nombre: this.forms.value.nombre,
+       direccion: this.forms.value.direccion,
+       precio: this.forms.value.precio,
+       estado:this.forms.value.estado,
+       tipo_inmuble:this.forms.value.tipo_inmuble,
+            usuarios:this.forms.value.usuarios
       };
-      console.log(this.form.value.roles);
       this.inmuebleService
         .updateUsuario(inmueble.id_inmueble!, inmueble)
         .subscribe({

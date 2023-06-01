@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ProfileComponent } from './pages/usuario/profile/profile.component';
 import { ChangepassComponent } from './pages/usuario/changepass/changepass.component';
 import { InmuebleComponent } from './pages/inmueble/inmueble.component';
+import { ReservaComponent } from './pages/reserva/reserva.component';
 
 const routes: Routes = [
   {
@@ -20,32 +21,32 @@ const routes: Routes = [
   {
     path: 'usuario',
     component: UsuarioComponent,
-    // canActivate: [AuthGuard], 
+     canActivate: [AuthGuard], 
   },
   {
     path: 'usuario/editar',
     component: EditarUsuarioComponent,
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'usuario/myprofile',
     component: ProfileComponent,
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'usuario/changepass',
     component: ChangepassComponent,
-    //canActivate: [AuthGuard],
+     canActivate: [AuthGuard],
   },
   {
     path: 'inmueble',
     component: InmuebleComponent,
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'inmueble/editar',
     component: InmuebleComponent,
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -55,6 +56,16 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },  
+  {
+    path: 'reserva',
+    component: ReservaComponent,
+    canActivate: [AuthGuard],
+  }, 
+  {
+    path: 'reserva/list',
+    component: ReservaComponent,
+    canActivate: [AuthGuard],
+  }, 
   {
     path: 'unauthorize',
     component: UnauthorizeComponent,

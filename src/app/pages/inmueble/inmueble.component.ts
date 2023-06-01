@@ -20,18 +20,19 @@ export class InmuebleComponent {
     private tokenService: TokenService
 
     ){}
-    obtenerInmueble(inmueble :Inmueble){
+    obtenerInmueble(inmueble: Inmueble){
       this.inmuebleSeleccionado = inmueble;
     }
     obtenerInmuebleId(inmueble: Inmueble){
-      localStorage.setItem('idInmueble',inmueble.id_inmueble!.toString() )
+      localStorage.setItem('idInmueble', inmueble.id_inmueble!.toString() ) //ojo
       this.router.navigate(['inmueble/editar']);
     }
     inmuebles: Inmueble[] = [];
     ngOnInit(){
       if(this.tokenService.isAdmin() ||  this.tokenService.isMod()){
+        this.isAdmin = this.tokenService.isAdmin();
           this.inmuebleSer.listar().subscribe({
-            next:(data :Inmueble[]) =>{
+            next:(data: Inmueble[]) =>{
               this.inmuebles =data.filter((inmueble: Inmueble) =>inmueble.estado);
             },
             error:(error)=>{

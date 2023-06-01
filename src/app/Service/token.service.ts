@@ -41,6 +41,7 @@ export class TokenService {
         if(this.roles.includes('ROLE_MODERATOR')) return true;
         return false;
     }
+  
     
     public verificarRol():void{
         const token = this.getToken();

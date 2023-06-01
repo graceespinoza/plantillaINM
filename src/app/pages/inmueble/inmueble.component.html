@@ -1,7 +1,7 @@
 <div class="container" style="background-color: #dfdddd73;">
     <br>
     <!-- *ngIf="isAdmin" -->
-    <button class="btn btn-info m-2" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modal-nuevoInmueble">Agregar nuevo <i class="bi bi-person-add"></i></button>
+    <button   *ngIf="isAdmin" class="btn btn-info m-2" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modal-nuevoInmueble"  data-bs-config={backdrop:true} >Agregar nuevo <i class="bi bi-person-add"></i></button>
     <table class="table">
       <thead>
         <tr>
@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let inmu of inmuebles ">
+        <tr *ngFor="let inmu of inmuebles">
           <th scope="row">{{ inmu.id_inmueble }}</th>
           <td>{{ inmu.nombre }}</td>
           <td> {{inmu.direccion }}</td>

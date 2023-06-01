@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="card mx-30" *ngFor="let item of inmuebles">
+            <img src="./../assets/edifi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                {{item.nombre}}
+  
+              </h5>
+              <div class="context">
+                <p>Direccion:&nbsp;{{item.direccion}}</p>
+                <p>Precio:&nbsp; {{item.precio}}</p>
+                <p>Tipo de inmueble:&nbsp; {{item.tipo_inmuble}}</p>
+  
+                <p>Estado:&nbsp; {{item.estado}}</p>
+              </div>
+              <button>Reservar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  hola

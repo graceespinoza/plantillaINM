@@ -14,7 +14,7 @@ export class NavbarComponent {
   usuarioLogged! :Usuario |null ;
   isAdmin: boolean = false;
   isMod: boolean = false;
-
+  isUsu:boolean =false;
   constructor(private tokenService:TokenService, private authService: AuthService, private router: Router) { }
 
   
